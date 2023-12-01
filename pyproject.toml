@@ -1,0 +1,112 @@
+[tool.poetry]
+name = "aoc2023"
+version = "1.0.0"
+description = "Solutions to the 2023 Advent of Code"
+authors = ["Matthew Wyant <me@matthewwyant.com>"]
+license = "GPL-3.0-plus"
+readme = "README.md"
+repository = "https://github.com/therealzanfar/aoc2023"
+
+# https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    # "Development Status :: 6 - Mature",
+    # "Development Status :: 7 - Inactive",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+]
+
+[tool.pytest.ini_options]
+python_files = [
+    "test_*.py", # default
+    "*_test.py", #default
+    "tests.py",
+]
+
+
+[tool.poetry.scripts]
+aoc2023 = 'aoc2023.__main__:cli'
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.7"
+rich = "^13.7.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+mypy = "^1.7.1"
+pytest = "^7.4.3"
+ruff = "^0.1.6"
+jinja2 = "^3.1.2"
+python-dotenv = "^1.0.0"
+advent-of-code-data = "^2.0.1"
+aocd-example-parser = "^2023.2"
+
+[tool.ruff]
+select = [
+    "F",
+    "E",
+    "W",
+    "C90",
+    "I",
+    "N",
+    "D",
+    "UP",
+    "YTT",
+    "ANN",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "DTZ",
+    "ISC",
+    "ICN",
+    "INP",
+    "PIE",
+    "PT",
+    "RET",
+    "SIM",
+    "TID",
+    "ARG",
+    "PLC",
+    "PLE",
+    "PLR",
+    "PLW",
+    "RUF",
+]
+ignore = [
+    "D105",
+    "D107",
+    "D203",
+    "D212",
+    "UP006",
+    "UP007",
+    "ANN101",
+    "ANN102",
+    "D400",
+    "D406",
+    "D407",
+    "PLC1901",
+    "UP035",
+]
+unfixable = ["F401", "F841"]
+
+# good-names-rgxs = ["^[a-z_][a-z]?"]
+# no-docstring-rgx = "^_|[Tt]est|[Mm]ock"
+
+[tool.ruff.per-file-ignores]
+"test_*.py" = ["D103"]
+
+[tool.ruff.pyupgrade]
+keep-runtime-typing = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

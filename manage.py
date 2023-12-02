@@ -109,12 +109,12 @@ def create_new_day(number: int) -> None:
     logger = logging.getLogger(__name__)
 
     if number < DAY_COUNT_MIN or number > DAY_COUNT_MAX:
-        raise click.ClickException("{number} is an invalid day number")
+        raise click.ClickException(f"{number} is an invalid day number")
 
     day_path = get_day_path(number)
 
     if day_path.exists() and len(list(day_path.iterdir())) > 0:
-        raise click.ClickException("Day {number} already exists")
+        raise click.ClickException(f"Day {number} already exists")
 
     day_jinja_env = Environment(
         loader=FileSystemLoader(DAY_TEMPLATE_PATH, encoding="utf-8"),

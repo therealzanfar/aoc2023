@@ -127,9 +127,8 @@ def cli(  # noqa: C901, PLR0912
             end="",
         )
 
-        if test:
-            expected = example.solution
-
+        expected = example.solution
+        if expected is not None:
             rprint(
                 rf"Expected=[bright_white]{expected:{ANSWER_FORMAT}}[/bright_white]",
                 end="",

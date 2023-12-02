@@ -31,3 +31,6 @@ zoneight234
 ]
 
 PUZZLE_INPUT = get_puzzle_input(1)
+
+PUZZLE_ANSWER_A: int | None = 56465
+PUZZLE_ANSWER_B: int | None = 55902

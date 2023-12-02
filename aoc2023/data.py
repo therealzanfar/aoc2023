@@ -118,6 +118,10 @@ def get_puzzle_inputs(day: int, part: str, test: bool = False) -> list[Example]:
         part_examples_name = f"PART_{part.upper()}_EXAMPLES"
         return getattr(data_module, part_examples_name)
 
+    part_answer_name = f"PUZZLE_ANSWER_{part.upper()}"
     return [
-        Example(data_module.PUZZLE_INPUT, None),
+        Example(
+            data_module.PUZZLE_INPUT,
+            getattr(data_module, part_answer_name),
+        ),
     ]

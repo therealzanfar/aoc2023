@@ -30,3 +30,6 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
 ]
 
 PUZZLE_INPUT: str = get_puzzle_input(2)
+
+PUZZLE_ANSWER_A: int | None = 2105
+PUZZLE_ANSWER_B: int | None = 72422

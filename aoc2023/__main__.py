@@ -22,7 +22,7 @@ from aoc2023.data import (
 
 CLICK_CONTEXT = {"help_option_names": ["-h", "--help"]}
 
-ANSWER_LEN = "7"
+ANSWER_LEN = "9"
 
 
 def setup_logging(verbosity: int = 0) -> None:
